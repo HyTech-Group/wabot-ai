@@ -1,30 +1,3 @@
-# Whastapp BOT AI OpenAI & Gemini (Node)
-
- Whatsapp Bot AI Node Project integrated by OpenAI and Gemini. 
- 
-## NPM Installation
-```sh
-git clone https://github.com/HyTech-Group/wabot-ai.git
-cd wabot-ai
-npm i wabot-ai
-```
-
-## Setting .env
-```sh
-PHONE = "628xxxxxxxx"
-
-OPENAI_APIKEY = "apiKey OpenAI"
-MODEL_OPENAI = "gpt-3.5-turbo-1106"
-COMMAND_OPENAI = "Command the OpenAI"
-PREFIX_OPENAI = ".openai"
-
-GEMINI_APIKEY = "apiKey Gemini"
-MODEL_GEMINI = "gemini-pro"
-COMMAND_GEMINI = "Command the GeminiAI"
-PREFIX_GEMINI = ".gemini"
-```
-## Implementation index.js
-```
 require('dotenv').config();
 const { HyWaBot, HytechMessages, HytechHandle, HytechHandleGemini } = require('wabot-ai');
 const data = {
@@ -57,6 +30,15 @@ bot.start()
                     const response = await HytechHandleGemini(messageToProcess);
                     sock.sendMessage(result.remoteJid, { text: response });
                 }
+                if (cmd.startsWith('.source')) {
+                    sock.sendMessage(result.remoteJid, { text: `*Whastapp Bot OpenAI*
+
+WhatsApp Chatbot is our project for AI-based conversations on WhatsApp messages using openAI technology.
+
+- Github: https://github.com/HyTech-Group/wabot-openai
+- Npm: https://www.npmjs.com/package/wabot-openai
+- Official Website: https://hy-tech.my.id/` });
+                }
             } catch (error) {
                 console.error('Error processing message:', error);
             }
@@ -65,16 +47,3 @@ bot.start()
     .catch(error => {
         console.error('Error starting bot:', error);
     });
-```
-
-## Run
-`node index.js`
-
-## Get ApiKey
-<p>Official Site OpenAI: <a href="https://openai.com/">https://openai.com</a>
-<br>
-Official Site Gemini: <a href="https://aistudio.google.com/">https://aistudio.google.com</a></p>
-
-Don't forget to give stars
-
-Follow Me: <a href="https://hy-tech.my.id/docs">FOLLOW</a>
