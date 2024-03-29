@@ -2,7 +2,7 @@
 
  Whatsapp Bot AI Node Project integrated by OpenAI and Gemini. 
  
-## Installation
+## NPM Installation
 ```sh
 git clone https://github.com/HyTech-Group/wabot-ai.git
 cd wabot-ai
