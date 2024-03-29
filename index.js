@@ -35,8 +35,8 @@ bot.start()
 
 WhatsApp Chatbot is our project for AI-based conversations on WhatsApp messages using openAI technology.
 
-- Github: https://github.com/HyTech-Group/wabot-openai
-- Npm: https://www.npmjs.com/package/wabot-openai
+- Github: https://github.com/HyTech-Group/wabot-ai
+- Npm: https://www.npmjs.com/package/wabot-ai
 - Official Website: https://hy-tech.my.id/` });
                 }
             } catch (error) {
