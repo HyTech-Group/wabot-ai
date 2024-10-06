@@ -1,5 +1,5 @@
 const { HyWaBot, HytechMessages } = require('wabot-ai');
-const { antiLink, extractImage } = require('./utils/group');
+const { antiLink } = require('./utils/group');
 const processCommand = require('./utils/private');
 require('dotenv').config();
 
@@ -18,10 +18,8 @@ bot.start()
                 if (!m.message) return;
 
                 const result = await HytechMessages(m);
-                console.log('Processed message:', result);
                 
                 if (!result || !result.chatsFrom) {
-                    console.warn('Result tidak valid:', result);
                     return;
                 }
 
@@ -35,7 +33,6 @@ bot.start()
                 if (result.chatsFrom === 'group') {
                     const messageDeleted = await antiLink(sock, m, cmd);
                     if (messageDeleted) return;
-					await extractImage(sock, m);
                 }
 
                 if (cmd) {

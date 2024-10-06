@@ -1,4 +1,4 @@
-const urlRegex = /(\b(https?|ftp|ftps|http|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+const urlRegex = /(\b(https?|ftp|ftps|http|file):\/\/([A-Z0-9.-]+(\.[A-Z]{2,})?)(:[0-9]{1,5})?(\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*)?)/ig;
 
 let antilinkEnabled = false;
 
